@@ -38,11 +38,11 @@ figure {
   }
 }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
   height: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: dark__grey;
+  background: var(--dark__grey);
   border-radius: 10px;
   transition: background ease-in-out 0.5s;
 }
