@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
 
+import Searcher from '../searcher'
+
 import backgroundImage from '../../images/hero-background.svg'
-import iconSearch from '../../images/search.svg'
+
 
 const HeroStyled = styled.div`
 .Container__Hero {
@@ -40,35 +42,6 @@ const HeroStyled = styled.div`
   margin-bottom: 1em;
   color: var(--colorBlue);
 }
-.Container__Hero .hero__form {
-  background-color: #fff;
-  border-radius: var(--border-radius);
-  padding: 1em;
-}
-.Container__Hero .Hero__search {
-  width: 85%;
-  height: 2.5em;
-}
-.Container__Hero .Hero__search::placeholder {
-  text-align: left;
-  padding: 1em;
-  font-family: 'Roboto';
-  font-size: font-size-paragrah;
-  color: var(--dark__grey);
-}
-.Hero__icon__search {
-  height: 35px;
-  width: 35px;
-  background-image: url(${iconSearch});
-  background-size: 35px 35px;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  vertical-align: middle;
-}
-.Hero__icon__search:focus {
-  outline: none;
-}
 
 `
 
@@ -81,14 +54,7 @@ function Hero () {
                     <h1>Busca Apps y recursos educativos</h1>
                     <p>La mejor plataforma de recursos educativos online</p>
                     </div>
-                    <form className="hero__form">
-                    <input
-                        className="Hero__search border-none"
-                        type="text"
-                        placeholder="Escribe el nombre de una app o un recurso"
-                        />
-                        <button id="Search-hero" className="Hero__icon__search"></button>
-                    </form>
+                    <Searcher/>
                 </div>
             </section>
         </HeroStyled>

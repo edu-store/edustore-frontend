@@ -119,7 +119,7 @@ b:nth-child(3).active {
 
     grid-template-areas: 'Container__Logo . Container__menu Container__menu';
     
-}
+    }
 }
 @media screen and (max-width: 425px) {
   .Container__menu {
@@ -192,7 +192,7 @@ function Header () {
                 <a id="btn__login" href="#">Iniciar sesion</a>
                 </li>
                 <li>
-                <button className="btn btn-white" id="btn__Sign__up">Registrarte</button>
+                <button className="btn btn-blue" id="btn__Sign__up">Registrarte</button>
                 </li>
             </ul>
             </nav>
