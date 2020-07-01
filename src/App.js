@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/header'
 import Hero from './components/Hero/hero'
 import ResourcesList from './components/RourcesList/resourcesList'
+import AllResourcesList from './components/RourcesList/AllResourcesList/allResourcesList'
 
 function App() {
   return (
@@ -11,8 +12,7 @@ function App() {
         <Header/>
         <Hero/>
         <ResourcesList/>
-        <p>App mas buscadas</p>
-        <p>Lista de app</p>
+        <AllResourcesList/>
     </div>
   );
 }
