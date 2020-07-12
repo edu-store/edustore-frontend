@@ -2,12 +2,22 @@ import React from "react"
 import styled from "styled-components"
 import image from "../../../images/ImagesResources/SpreakerStudio.png"
 
+
+import {
+    useHistory,
+} from 'react-router-dom'
+
 const ResourceStyled = styled.article`
 `
 
 function Resource () {
+
+    const history = useHistory()
+    function handleClick(){
+        history.push('/recurso/nombre-del-recurso')
+    }
     return (
-        <ResourceStyled className="Container__List__resource">
+        <ResourceStyled className="Container__List__resource" onClick={handleClick}>
                 <figure className="Container__Resource_Img">
                 <img
                     className="Resource_Img"

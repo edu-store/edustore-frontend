@@ -88,3 +88,8 @@ input {
   flex-direction: column;
 }
 
+.Titles__sections {
+
+  font-size: 2em;
+}
+
