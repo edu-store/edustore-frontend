@@ -1,5 +1,6 @@
 import React,{ useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { useSelector, useDispatch } from 'react-redux'
 
 import Resources from './resource'
 
@@ -86,8 +87,9 @@ span {
 }
 `
 function AllResourcesList () {
-
-  const [ AppList, setAppList] =  useState([]);
+  const dispatch = useDispatch()
+  const AppList = useSelector( (state) => state.AppList)
+  
 
   useEffect(() => {
     fetch('https://edustore-web-platform.firebaseio.com/Apps.json')
@@ -96,8 +98,10 @@ function AllResourcesList () {
     })
     .then(( data ) =>{
       let apps = Object.keys(data).map(key => data[key]);
-      setAppList(apps)
-      //console.log(apps)
+      dispatch({
+        type:'SET_APP_LIST',
+        payload: apps
+      })
       
     })
     .catch((error)=>{
