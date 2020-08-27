@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import image from "../../../images/ImagesResources/SpreakerStudio.png"
 
 
 import {
@@ -10,7 +9,13 @@ import {
 const ResourceStyled = styled.article`
 `
 
-function Resource () {
+function Resource (
+    {
+        nombre,
+        asignatura,
+        imagen,
+    }
+) {
 
     const history = useHistory()
     function handleClick(){
@@ -20,14 +25,16 @@ function Resource () {
         <ResourceStyled className="Container__List__resource" onClick={handleClick}>
                 <figure className="Container__Resource_Img">
                 <img
+
+                    loading="lazy"
                     className="Resource_Img"
-                    src={image}
+                    src={imagen}
                     alt="Imagen del recurso 1"
                 />
                 </figure>
                 <div className="Container__texts_resource">
-                <h1>Mi Expresion Cuenta</h1>
-                <p>Lengua y literatura</p>
+                <h1>{nombre}</h1>
+                <p>{asignatura}</p>
                 </div>
 
         </ResourceStyled>

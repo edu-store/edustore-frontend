@@ -182,14 +182,14 @@ function Header () {
             </a>
             </div>
             <nav className="Container__menu">
-            <a className="McButton" id="McButton" onClick={handleClick}>
-                <b className="" id="McBar1"></b>
+            <a className="McButton" id="McButton" href="/#" onClick={handleClick}>
+                <b id="McBar1"></b>
                 <b id="McBar2"></b>
-                <b className="" id="McBar3"></b>
+                <b id="McBar3"></b>
             </a>
             <ul className="btns__menu" id="btns__menu">
                 <li>
-                <a id="btn__login" href="#">Iniciar sesion</a>
+                <a id="btn__login" href="/#">Iniciar sesion</a>
                 </li>
                 <li>
                 <button className="btn btn-blue" id="btn__Sign__up">Registrarte</button>

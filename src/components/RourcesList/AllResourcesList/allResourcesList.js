@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import Resources from './resource'
@@ -86,6 +86,24 @@ span {
 }
 `
 function AllResourcesList () {
+
+  const [ AppList, setAppList] =  useState([]);
+
+  useEffect(() => {
+    fetch('https://edustore-web-platform.firebaseio.com/Apps.json')
+    .then(( response ) => {
+      return response.json()
+    })
+    .then(( data ) =>{
+      let apps = Object.keys(data).map(key => data[key]);
+      setAppList(apps)
+      //console.log(apps)
+      
+    })
+    .catch((error)=>{
+      console.log('se obtuvo el error: '+ error)
+    })
+  })
     return(
         <AllResourcesListStyled>
             <section className="Section__Resources__List">
@@ -98,12 +116,18 @@ function AllResourcesList () {
                 </div>
                 <div className="Container__List__Resources">
                     <div id="apps" className="Container__List">
-                        <Resources/>
-                        <Resources/>
-                        <Resources/>
-                        <Resources/>
-                        <Resources/>
-                        <Resources/>
+                      {
+                        AppList.map(({id,imagen,nombre, asignatura}) =>{
+                          return (
+                            <Resources
+                            key = {id}
+                            imagen = {imagen}
+                            nombre = {nombre}
+                            asignatura = {asignatura}
+                            />
+                          )
+                        })
+                      }
                     </div>
                 </div>
                 </div>

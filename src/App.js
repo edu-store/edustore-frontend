@@ -3,7 +3,6 @@ import './App.css'
 
 import Header from './components/header'
 import Hero from './components/Hero/hero'
-import ResourcesList from './components/RourcesList/resourcesList'
 import AllResourcesList from './components/RourcesList/AllResourcesList/allResourcesList'
 import ResourcePage from './components/ResourcePage/resource-page'
 
@@ -24,7 +23,6 @@ function App() {
             </Route>
             <Route path="/">
               <Hero/>
-              <ResourcesList/>
               <AllResourcesList/>
             </Route>
           </Switch>

@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import image from "../../images/ImagesResources/Algeo.webp"
-import screen from "../../images/screenshots/Algeo_screenshot.webp"
 
 
 const ResourcePageStyles = styled.div`
@@ -113,7 +111,7 @@ function ResourcePage() {
         <ResourcePageStyles>
             <section className="Resource__detail">
          <figure className="Resource__detail__Container">
-             <img src={image} alt="" className="Resource__detail__logo"/>
+             <img src='' alt="" className="Resource__detail__logo"/>
          </figure>
          <div className="Resource__detail__info">
              <h1 className="Resource__detail__title">Algeo:Cal. Gráfica</h1>
@@ -133,19 +131,19 @@ function ResourcePage() {
        <div className="screenshot-section-container">
          <div className="screenshot-container-imgs">
            <figure>
-              <img src={screen} alt="Algeo"/>
+              <img src="" alt="Algeo"/>
            </figure>
            <figure>
-              <img src={screen} alt="Algeo"/>
+              <img src="" alt="Algeo"/>
            </figure>
            <figure>
-              <img src={screen} alt="Algeo"/>
+              <img src="" alt="Algeo"/>
            </figure>
            <figure>
-              <img src={screen} alt="Algeo"/>
+              <img src="" alt="Algeo"/>
            </figure>
            <figure>
-              <img src={screen} alt="Algeo"/>
+              <img src="" alt="Algeo"/>
            </figure>
         </div>
        </div>
