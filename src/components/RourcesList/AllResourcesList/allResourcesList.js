@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react'
+import React,{ useEffect } from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -12,8 +12,8 @@ const AllResourcesListStyled = styled.div`
 }
 .Container__Resources__List {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "Titles__sections Titles__sections Titles__sections Buttons__directions__App" "Container__List__Resources Container__List__Resources  Container__List__Resources Container__List__Resources";
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: ". Titles__sections Titles__sections Titles__sections Buttons__directions__App" ". Container__List__Resources Container__List__Resources  Container__List__Resources Container__List__Resources";
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -43,6 +43,7 @@ const AllResourcesListStyled = styled.div`
 .Container__List .Container__List__resource:hover {
   transform: scale(1.1);
   transition: 0.5s;
+  
 }
 
 /* aqui inicia el recurso*/
@@ -118,6 +119,18 @@ function AllResourcesList () {
                 <div className="Buttons__directions__App">
                     
                 </div>
+                <aside class="Container__Menu__category">
+                <nav>
+                  <ul class="Menu__category_items">
+                    <li>Matemática</li>
+                    <li>Lengua y Lit.</li>
+                    <li>Ciencias</li>
+                    <li>Ingles</li>
+                    <li>Fisica</li>
+                    <li>Sociales</li>
+                  </ul>
+                </nav>
+              </aside>
                 <div className="Container__List__Resources">
                     <div id="apps" className="Container__List">
                       {

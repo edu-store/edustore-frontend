@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 import Resource from "./resource"
+import iconRight from '../../images/right-arrow.svg'
+import iconleft from '../../images/left-arrow.svg'
 
 const ResourcesListStyled = styled.section`
 
@@ -11,15 +13,15 @@ const ResourcesListStyled = styled.section`
 
 .Container__App_and_resources {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "Titles__sections Titles__sections Titles__sections Buttons__directions__App" "Container__Resources  Container__Resources  Container__Resources Container__Resources";
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: ". Titles__sections Titles__sections Buttons__directions__App Buttons__directions__App" "Container__Menu__category Container__Resources  Container__Resources  Container__Resources Container__Resources";
   max-width: var(--max-width);
   margin: 0 auto;
 }
 .Container__Resources__List {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "Titles__sections Titles__sections Titles__sections Buttons__directions__App" "Container__List__Resources Container__List__Resources  Container__List__Resources Container__List__Resources";
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: ". Titles__sections Titles__sections Titles__sections Buttons__directions__App" ". Container__List__Resources  Container__List__Resources Container__List__Resources Container__List__Resources";
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -35,15 +37,25 @@ const ResourcesListStyled = styled.section`
 .Buttons__directions__App button {
   margin-right: 1em;
 }
+.Buttons__directions__App button img{
+  width: 2em;
+  height: auto;
+}
 .Container__Menu__category {
   grid-area: Container__Menu__category;
+}
+aside.Container__Menu__category{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
 }
 .Menu__category_items li {
   display: block;
   font-size: var(--font-size-subtitles);
   font-weight: bold;
   padding: 0.8em;
-  border-radius: 0 border-radius border-radius 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 .Menu__category_items li:hover {
   background-color: var(--colorBlue);
@@ -110,7 +122,8 @@ function ResourcesList () {
                 Recursos más buscados
               </h1>
               <div className="Buttons__directions__App">
-                
+                  <button class="btn btn-white btn-corto"><img src={iconleft}></img></button>
+                  <button class="btn btn-blue btn-corto"><img src={iconRight}></img></button>
               </div>
               <div className="Container__Resources">
                 <div id="appMasBuscadas" className="Container__scroll">

@@ -4,7 +4,7 @@
 --color__dark:#102434;
 --dark__grey:#C2C2C2;
 --color__yellow: #FFDC64;
---max-width : 1024px;
+--max-width : 1040px;
 --font-size-paragrah: 1em;
 --font-size-titles: 2em;
 --font-size-subtitles: 1em;
@@ -63,10 +63,17 @@ li {
   border: none;
   font-weight: bold;
   cursor: pointer;
+  transition: 1s ease all;
+}
+
+.btn:hover{
+
+  transform: scale(1.05);
+  box-shadow: 0 1px 10px 1px #c2c2c2;
 }
 .btn.btn-corto {
-  padding: 1.5em 1.5em;
-  border: 0.5px solid var(--dark__grey);
+  padding: 1em 2.5em;
+  background: var(--colorBlue);
 }
 .btn-white {
   color: var(--colorBlue);

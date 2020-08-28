@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import image from "../../images/ImagesResources/SpreakerStudio.png"
+
 const ResourceStyled = styled.article`
 .Container__List__resource{
   display: inline-block;
@@ -48,7 +48,7 @@ function Resource () {
                 <figure className="Container__Resource_Img">
                 <img
                     className="Resource_Img"
-                    src={image}
+                    src=""
                     alt="Imagen del recurso 1"
                 />
                 </figure>
