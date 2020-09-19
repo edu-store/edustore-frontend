@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import styled from 'styled-components'
 
+import { useSelector } from 'react-redux'
+import ResourceSelected from './resource-selected'
+import icon_back from '../../images/icon_back.svg'
 
 const ResourcePageStyles = styled.div`
+
 .Resource__detail {
   max-width: var(--max-width);
   padding: var(--padding__container);
@@ -104,64 +108,59 @@ const ResourcePageStyles = styled.div`
   margin-left: 0.5em;
 }
 
+.back{
+  font-size:1.2em;
+  margin-left:.5em;
+  color:var(--colorBlue)
+  
+}
+
+.arrowleft{
+  width:3em;
+  
+}
+.container_btn_back{
+  display:flex;
+  align-items:center;
+  margin: 1em 0 0 1em;
+  position:sticky;
+  top: 10px;
+  padding:1em;
+  border-radius:var(--border-radius);
+  background: white;
+  max-width:9em
+
+
+}
 `
 
-function ResourcePage() {
+function ResourcePage({ match, history }) {
+
+  let DBresource = useSelector(state => state.AppList.find(item => item.nombre_corto_app === match.params.id))
+  const [resource, setResource] = useState(DBresource)
+
+  useEffect( ()=> {
+    console.log(resource)
+    if ( !resource ) {
+        fetch(`https://edustore-web-platform.firebaseio.com/Apps/${match.params.id}.json`)
+            .then((response) => response.json())
+            .then((data)=> {
+              setResource(data)
+              console.log(data)
+            })
+    }
+}, [resource, match.params.id])
+
+function handleClick() {
+  history.goBack()
+}
     return (
         <ResourcePageStyles>
-            <section className="Resource__detail">
-         <figure className="Resource__detail__Container">
-             <img src='' alt="" className="Resource__detail__logo"/>
-         </figure>
-         <div className="Resource__detail__info">
-             <h1 className="Resource__detail__title">Algeo:Cal. Gráfica</h1>
-             <p className="Resource__detail__subtitle">Matemática</p>
-             <div className="container__rating">
-               <div className="rating">
-                     
-                </div>
-                <div className="rating__count">
-                  
-                </div>
-             </div>
-              <a href="/images/Algeo.webp" download="Algeo.apk" className="btn btn-blue">Descargar</a>
-         </div>
-     </section>
-     <section className="screenshot-section">
-       <div className="screenshot-section-container">
-         <div className="screenshot-container-imgs">
-           <figure>
-              <img src="" alt="Algeo"/>
-           </figure>
-           <figure>
-              <img src="" alt="Algeo"/>
-           </figure>
-           <figure>
-              <img src="" alt="Algeo"/>
-           </figure>
-           <figure>
-              <img src="" alt="Algeo"/>
-           </figure>
-           <figure>
-              <img src="" alt="Algeo"/>
-           </figure>
-        </div>
-       </div>
-     </section>
-     <section className="info-detail-section">
-       <div className="info-detail-container">
-          <h1 className="Titles__sections"><strong>Descripción</strong></h1>
-          <p>Calculadora semi cientifica, con gráficos en el plano cartesiano.<br></br>
-            Usa las siguientes funciones únicas para ayudarte con tu clase de cálculo y álgebra:  
-            </p>
-            <ul className="list_container">
-                <li>* Diferenciación simbólica</li>
-                <li>* Integrales definidas</li>
-                <li>* Cálculo de series de Taylor</li>
-                <li>* Resolución de ecuaciones</li>
-            </ul>
-        </div>
-     </section>
+          <div className="container_btn_back" onClick={handleClick}>
+              <img src={icon_back} className="arrowleft" alt="Atras"></img>
+              <p className="back" >Atras</p>
+          </div>
+          <ResourceSelected {...resource}/>
         </ResourcePageStyles>
     )
 }

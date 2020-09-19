@@ -7,27 +7,26 @@ import backgroundImage from '../../images/hero-background.svg'
 
 
 const HeroStyled = styled.div`
+  
+  
 .Container__Hero {
-  max-width: 100%;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 0;
   background: url(${backgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-bottom: 1em;
+  
+  
 }
 
 .Hero {
   text-align: center;
   padding: var(--padding__container);
 }
-.Container__Hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+
 .Container__Hero .Hero__texts {
   margin: auto auto;
 }
@@ -46,8 +45,10 @@ const HeroStyled = styled.div`
 `
 
 function Hero () {
+
+
     return (
-        <HeroStyled>
+        <HeroStyled className="section_hero">
             <section className="Container__Hero">
                 <div className="Hero">
                     <div className="Hero__texts">

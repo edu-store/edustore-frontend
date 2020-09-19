@@ -8,7 +8,7 @@ import Header from './components/header'
 import Hero from './components/Hero/hero'
 import AllResourcesList from './components/RourcesList/AllResourcesList/allResourcesList'
 import ResourcePage from './components/ResourcePage/resource-page'
-import RosourceRecents from './components/RourcesList/resourcesList'
+import Footer from './components/footer'
 
 import {
   BrowserRouter as Router,
@@ -31,15 +31,13 @@ function App() {
           <Router>
               <Header/>
               <Switch>
-                <Route path="/recurso">
-                  <ResourcePage/>
-                </Route>
+                <Route path="/recurso/:id" component={ResourcePage}/>
                 <Route path="/">
                   <Hero/>
-                  <RosourceRecents/>
                   <AllResourcesList/>
                 </Route>
               </Switch>
+              <Footer/>
         </Router>
       </Provider>
     </div>

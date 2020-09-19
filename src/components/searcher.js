@@ -11,6 +11,13 @@ const SearcherStyled = styled.div`
   background-color: #fff;
   border-radius: var(--border-radius);
   padding: 1em;
+  width:100%;
+  max-width: 36em;
+
+  position: sticky;
+  top:0;
+  z-index:10;
+  transition: top 0.5s;
 }
 .Hero__search {
   width: 85%;
@@ -20,7 +27,7 @@ const SearcherStyled = styled.div`
   text-align: left;
   padding: 1em;
   font-family: 'Roboto';
-  font-size: font-size-paragrah;
+  font-size: var(--font-size-paragrah);
   color: var(--dark__grey);
 }
 .Hero__icon__search {

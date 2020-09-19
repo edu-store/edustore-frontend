@@ -1,6 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from './../images/logo.svg'
+
+import {
+
+  Link,
+
+} from 'react-router-dom';
+
 const HeaderStyled = styled.div`
 .header{
     background: var(--color__dark);
@@ -176,10 +183,10 @@ function Header () {
         <header className="header">
         <div className="container__menu">
             <div className="Container__Logo">
-            <a href="/" className="container__logo">
+            <Link to="/" className="container__logo">
                 <img src={logo} alt="Logo-Edu-Store" />
                 <span >Edu Store</span>
-            </a>
+            </Link>
             </div>
             <nav className="Container__menu">
             <a className="McButton" id="McButton" href="/#" onClick={handleClick}>
