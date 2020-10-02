@@ -17,6 +17,8 @@ function Resource (
         nombre_corto_app,
         asignatura,
         imagen,
+        requiere_internet,
+        nombre_corto_asignatura,
     }
 ) {
 
@@ -37,7 +39,10 @@ function Resource (
         </figure>
         <div className="Container__texts_resource">
           <h1>{nombre}</h1>
-          <p>{asignatura}</p>
+          <div>
+            <p className={nombre_corto_asignatura}>{asignatura}</p>
+            <p className={requiere_internet}>{requiere_internet}</p>
+          </div>
         </div>
         
 

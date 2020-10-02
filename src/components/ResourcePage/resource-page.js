@@ -20,12 +20,8 @@ const ResourcePageStyles = styled.div`
   border-radius: 30px;
   cursor: pointer;
   margin-right: 2em;
-  height: 10em;
-  width: 10em;
 }
 .Resource__detail__logo {
-  width: 15em;
-  height: 15em;
 }
 .Resource__detail__title {
   font-size: var(--font-size-titles);

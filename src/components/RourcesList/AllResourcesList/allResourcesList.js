@@ -80,10 +80,45 @@ const AllResourcesListStyled = styled.div`
 .Container__texts_resource h1 {
   color: var(--color__dark);
   margin-bottom: 0.5em;
+  min-height: 2.3em;
 }
 .Container__texts_resource p {
-  font-size: var(--font-size-paragrah);
+  font-size: 1em;
   margin-bottom: 0.5em;
+  background: red;
+  color: white;
+  border-radius: 5em;
+  padding: .3em 1em;
+  display: table;
+}
+.Container__texts_resource p.Lengua_y_Literatura {
+
+  background: var(--color__yellow);
+
+}
+.Container__texts_resource p.Matematicas {
+
+  background: var(--color__orange);
+}
+.Container__texts_resource p.Ingles {
+
+  background: var(--color__purple);
+}
+.Container__texts_resource p.Cienciasnaturales {
+
+  background: var(--color__green);
+}
+.Container__texts_resource p.Multi_asignatura {
+
+  background: linear-gradient(var(--colorBlue),var(--color__purple));
+}
+.Container__texts_resource p.Offline {
+
+  background: var(--colorBlue);
+}
+.Container__texts_resource p.Online {
+
+  background: var(--color__red);
 }
 span {
   font-weight: bold;
@@ -125,7 +160,7 @@ function AllResourcesList () {
                 <div className="Container__List__Resources">
                     <div id="apps" className="Container__List">
                       {
-                        AppList.map(({id,imagen,nombre,nombre_corto_app, asignatura}) =>{
+                        AppList.map(({id,imagen,nombre,nombre_corto_app, asignatura,requiere_internet,nombre_corto_asignatura}) =>{
                           return (
                             <Resources
                             id = {id}
@@ -134,6 +169,8 @@ function AllResourcesList () {
                             nombre = {nombre}
                             nombre_corto_app = {nombre_corto_app}
                             asignatura = {asignatura}
+                            requiere_internet={requiere_internet}
+                            nombre_corto_asignatura={nombre_corto_asignatura}
                             
 
                             />
