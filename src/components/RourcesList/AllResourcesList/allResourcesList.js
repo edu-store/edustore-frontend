@@ -70,6 +70,7 @@ const AllResourcesListStyled = styled.div`
   padding: 1em;
   /*width:100%;
   max-height:14em*/
+  border-radius:50px
 }
 
 .Container__texts_resource {

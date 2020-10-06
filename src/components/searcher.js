@@ -26,7 +26,7 @@ const SearcherStyled = styled.div`
 .Hero__search::placeholder {
   text-align: left;
   padding: 1em;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: var(--font-size-paragrah);
   color: var(--dark__grey);
 }

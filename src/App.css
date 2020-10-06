@@ -16,7 +16,7 @@
 --padding__container: 1em;
 
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 li {
   list-style: none;
 }
@@ -27,7 +27,8 @@ li {
 body,
 p,
 h1,
-figure {
+figure,
+input {
   margin: 0px;
   color: var(--dark__grey);
   font-family: 'Roboto', sans-serif;
@@ -46,7 +47,7 @@ figure {
   height: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--dark__grey);
+  background: var(--colorBlue);
   border-radius: 10px;
   transition: background ease-in-out 0.5s;
 }

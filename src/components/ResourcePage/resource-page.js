@@ -46,7 +46,7 @@ const ResourcePageStyles = styled.div`
 .screenshot-section-container figure > img {
   border-radius: var(--border-radius);
   margin-right: 0.5em;
-  height: 31em;
+  //height: 31em;
   width: auto;
 }
 .screenshot-container-imgs {
